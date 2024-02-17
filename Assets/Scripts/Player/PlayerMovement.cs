@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //   || Input.GetKeyDown("'W' key")
-        if (Input.GetKeyDown("'W' key") && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
