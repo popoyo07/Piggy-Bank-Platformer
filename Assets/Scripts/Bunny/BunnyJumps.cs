@@ -35,14 +35,14 @@ public class BunnyJumps : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider == boxColliderEnemyDeath)
+        if (other.collider == ColliderEnemyDeath)
         {
             Debug.Log("1");
         }
-        if (other.collider == boxColliderPlayerDeath)
+        if (other.collider == ColliderPlayerDeath)
         {
             Debug.Log(2);
         }
     }
 }
-}
+
