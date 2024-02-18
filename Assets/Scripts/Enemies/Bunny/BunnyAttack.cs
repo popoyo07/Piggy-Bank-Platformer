@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MeleeEnemy : MonoBehaviour
+public class BunnyAttack: MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -17,9 +17,12 @@ public class MeleeEnemy : MonoBehaviour
     private Animator anim;
     private Health playerhealth;
 
+    private BunnyPatrol patrol;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        patrol = GetComponentInParent<BunnyPatrol>();
     }
 
     private void Update()
@@ -37,6 +40,8 @@ public class MeleeEnemy : MonoBehaviour
                 Debug.Log("atacking");
             }
         }
+        if (patrol != null)
+            patrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()

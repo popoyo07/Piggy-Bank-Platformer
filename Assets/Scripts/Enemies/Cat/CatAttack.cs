@@ -17,9 +17,12 @@ public class CatAttack : MonoBehaviour
     private Animator anim;
     private Health playerhealth;
 
+    private Patrol catPatrol;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        catPatrol = GetComponentInParent<Patrol>();
     }
 
     private void Update()
@@ -37,6 +40,8 @@ public class CatAttack : MonoBehaviour
                 Debug.Log("atacking");
             }
         }
+        if(catPatrol != null)
+            catPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()
