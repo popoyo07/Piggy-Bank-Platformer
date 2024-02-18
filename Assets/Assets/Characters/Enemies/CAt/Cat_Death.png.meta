@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e67ab52d1b4382f41a533cc684c3c35a
+guid: 18f26c115da234045ae6b4e9f1f615e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat_walk_0
+      name: Cat_Death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243f76e1073723548a272d25ba8f705c
+      internalID: 2029727657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Death_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5ec2ef047eb0f4c8f9a72bbdf3bd3f
+      internalID: -568811056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Death_2
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 784028dffe82dbe4f93110a7eaba9e79
-      internalID: 1207522129
+      spriteID: c1727250e9ae9724999d7d8a3edfb824
+      internalID: 776123604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_walk_1
+      name: Cat_Death_3
       rect:
         serializedVersion: 2
         x: 512
@@ -158,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9760e2fb90c0e734890dc62d2a8e8b78
-      internalID: -1407385994
+      spriteID: 618f4ec85f13150469442f031b37d559
+      internalID: 210093716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_walk_2
+      name: Cat_Death_4
       rect:
         serializedVersion: 2
         x: 0
@@ -179,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9d54589f8aa00d468ea3c7f05a5b115
-      internalID: -794716451
+      spriteID: 13fc2873f7e050d46846af6184db2ed5
+      internalID: -681866972
       vertices: []
       indices: 
       edges: []
@@ -196,9 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cat_walk_0: 1207522129
-      Cat_walk_1: -1407385994
-      Cat_walk_2: -794716451
+      Cat_Death_0: 2029727657
+      Cat_Death_1: -568811056
+      Cat_Death_2: 776123604
+      Cat_Death_3: 210093716
+      Cat_Death_4: -681866972
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
