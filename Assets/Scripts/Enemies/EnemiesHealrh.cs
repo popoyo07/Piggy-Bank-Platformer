@@ -2,9 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+public class EnemiesHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; } // making it accesible but value can only change in this method
@@ -37,12 +36,6 @@ public class Health : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
-        Invoke("LoadScene1", 1f);
-    }
-
-    public void LoadScene1()
-    {
-        SceneManager.LoadSceneAsync("GameOver"); // Replace "Scene1" with the actual name of your first scene
     }
     /* private void OnCollisionEnter2D(Collision2D collision)
      {

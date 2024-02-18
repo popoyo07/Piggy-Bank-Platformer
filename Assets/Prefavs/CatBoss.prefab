@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2992780540213210756}
   - component: {fileID: 7093524138422060124}
   - component: {fileID: 458250024248897977}
-  - component: {fileID: 8153386283890406268}
+  - component: {fileID: 7239260129459801317}
   - component: {fileID: 707587105847854211}
   m_Layer: 8
   m_Name: CatBoss
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefav: {fileID: 2657288402628325533, guid: 08a65898edc029b45bf23a444ae357e8, type: 3}
---- !u!114 &8153386283890406268
+--- !u!114 &7239260129459801317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7248301820793297579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be5a5d3fb7bc424baf5383bd8f9725d, type: 3}
+  m_Script: {fileID: 11500000, guid: 94aa0a505bab21040ab90fc093e8c8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
