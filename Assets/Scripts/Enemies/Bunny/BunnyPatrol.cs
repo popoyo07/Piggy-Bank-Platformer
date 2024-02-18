@@ -27,6 +27,11 @@ public class BunnyPatrol : MonoBehaviour
         initScale = transform.localScale;
        
     }
+
+    private void OnDisable()
+    {
+        anim.SetBool("Walking", false);
+    }
     private void Update()
     {
         if (movingLeft)
