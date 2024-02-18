@@ -26,15 +26,15 @@ public class BunnyDeath : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
-        Invoke("DestroyObject", 1f);
         SpawnObject();
+        Invoke("DestroyObject", 1f);
     }
     private void SpawnObject()
     {
 
         Vector3 previousObjectPosition = transform.position;
         // Instantiate a new object based on the prefab
-        current = Instantiate(Prefav, Vector3.zero, Quaternion.identity);
+        current = Instantiate(Prefav, transform.position, Quaternion.identity);
     }
 
     void DestroyObject()

@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float dirx = 0f; 
 
-    [SerializeField] private float moveSpeed = 7f; // place holder for speed and force
-    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float moveSpeed; // place holder for speed and force
+    [SerializeField] private float jumpForce;
 
     private enum MovementState { idl, running, junmping, falling } // here is making a custom value variable so I can track animatinos. Their position means 0, 1, 2, 3 and so on
 

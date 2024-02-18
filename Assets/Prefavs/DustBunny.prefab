@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3368882368233980293}
   - component: {fileID: 1543729621583209256}
   - component: {fileID: 1353631396191980621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DustBunny
   m_TagString: Enemy
   m_Icon: {fileID: 0}

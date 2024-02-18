@@ -6,7 +6,7 @@ public class CatDeath : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
-    private Health CatHealth;
+    private EnemiesHealth CatHealth;
     [SerializeField] private GameObject Prefav;
     private GameObject current;
 
@@ -15,11 +15,14 @@ public class CatDeath : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
+
+   
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            CatHealth = transform.GetComponent<Health>();
+            CatHealth = transform.GetComponent<EnemiesHealth>();
             if (CatHealth.currentHealth > 0)
             {
                 CatHealth.takeDamage(1);
@@ -36,15 +39,16 @@ public class CatDeath : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
-        Invoke("DestroyObject", 1f);
         SpawnObject();
+        Invoke("DestroyObject", 1f);
+      
     }
 
     private void SpawnObject()
     {
-        Vector3 previousObjectPosition = transform.position;
+      
         // Instantiate a new object based on the prefab
-        current = Instantiate(Prefav, Vector3.zero, Quaternion.identity);
+        current = Instantiate(Prefav, transform.position, Quaternion.identity);
     }
     void DestroyObject()
     {
