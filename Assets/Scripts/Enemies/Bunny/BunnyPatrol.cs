@@ -1,86 +1,75 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class BunnyPatriol : MonoBehaviour
+public class BunnyPatrol : MonoBehaviour
 {
-    public GameObject RightEdge;
-    public GameObject leftEdge;
-    private Rigidbody2D rb;
-    private Animator anim;
-    private Transform currentPoint;
-    [SerializeField] private CircleCollider2D cir;
-    public float speed;
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        currentPoint = RightEdge.transform;
-        anim.SetBool("Moving", true);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Directions"))
-        {
-            if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == RightEdge)
-            {
-                Flip();
-                currentPoint = leftEdge.transform;
-                Debug.Log("flip Left");
+    [Header("Patrol Points")]
+    [SerializeField] private Transform leftEdge;
+    [SerializeField] private Transform rightEdge;
 
-            }
-            if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == leftEdge)
-            {
-                Flip();
-                currentPoint = RightEdge.transform;
-                Debug.Log("flip Right");
-            }
-        }
+    [Header("Enemy")]
+    [SerializeField] private Transform enemy;
+
+    [Header("movement parameters")]
+    [SerializeField] private float speed;
+    private Vector3 initScale;
+    private bool movingLeft;
+
+    [Header("Idle Behavior")]
+    [SerializeField] private float idlDuration;
+    private float idlTimer;
+
+    [Header("enemy animator")]
+    [SerializeField] private Animator anim;
+
+    private void Awake()
+    {
+        initScale = transform.localScale;
+       
     }
     private void Update()
     {
-        Vector2 point = currentPoint.position - transform.position;
-        if (currentPoint == RightEdge)
+        if (movingLeft)
         {
-            rb.velocity = new Vector2(speed, 0);
-            Debug.Log("moving Right");
+            if (enemy.position.x > leftEdge.position.x)
+            {
+                MoveInDirection(-1);
+            }
+            else
+                directionChange();
+
         }
         else
         {
-            rb.velocity = new Vector2(-speed, 0);
-            Debug.Log("moving Left");
-
-        }
-
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == RightEdge)
-        {
-            Flip();
-            currentPoint = leftEdge.transform;
-            Debug.Log("flip Left");
-
-        }
-
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == leftEdge)
-        {
-            Flip();
-            currentPoint = RightEdge.transform;
-            Debug.Log("flip Right");
+            if (enemy.position.x < rightEdge.position.x)
+            {
+                MoveInDirection(1);
+            }
+            else
+                directionChange();
         }
     }
 
-    private void Flip()
+    private void directionChange()
     {
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
+        anim.SetBool("Walking", false);
+
+        idlTimer += Time.deltaTime;
+
+        if (idlTimer > idlDuration)
+            movingLeft = !movingLeft;
     }
-
-    private void OnDrawGizmos()
+    private void MoveInDirection(int _direction)
     {
-        Gizmos.DrawWireSphere(RightEdge.transform.position, 0.5f);
-        Gizmos.DrawWireSphere(leftEdge.transform.position, 0.5f);
+        idlTimer = 0;
+        anim.SetBool("Walking", true);
 
+        // facing right direction
+        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * -1 * _direction,
+            initScale.y, initScale.z);
+
+        // moving direction
+        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
+            enemy.position.y, enemy.position.z);
     }
 }

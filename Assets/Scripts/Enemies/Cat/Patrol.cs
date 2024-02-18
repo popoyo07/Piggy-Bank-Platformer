@@ -15,13 +15,17 @@ public class Patrol : MonoBehaviour
     private Vector3 initScale;
     private bool movingLeft;
 
+    [Header("Idle Behavior")]
+    [SerializeField]private float idlDuration;
+    private float idlTimer;
+
     [Header("enemy animator")]
     [SerializeField] private Animator anim;
 
     private void Awake()
     {
         initScale = transform.localScale;
-        anim = GetComponent<Animator>();
+       
     }
     private void Update()
     {
@@ -49,10 +53,15 @@ public class Patrol : MonoBehaviour
     private void directionChange()
     {
         anim.SetBool("Walking", false);
+
+        idlTimer += Time.deltaTime;
+
+        if (idlTimer > idlDuration)
         movingLeft = !movingLeft;
     }
     private void MoveInDirection(int _direction)
     {
+        idlTimer = 0;
         anim.SetBool("Walking", true);
 
         // facing right direction
