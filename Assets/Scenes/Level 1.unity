@@ -274,7 +274,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 31.875, y: 31.875}
+    oldSize: {x: 32, y: 32}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -297,9 +297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   moveSpeed: 7
-  jumpForce: 10
+  jumpForce: 15
 --- !u!95 &26908870
 Animator:
   serializedVersion: 5
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 465635686}
   - component: {fileID: 465635685}
   - component: {fileID: 465635688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,8 +1279,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &465635688
-TilemapCollider2D:
+--- !u!61 &465635688
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1311,10 +1311,19 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 1
+  m_Offset: {x: 0, y: -4.0023355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 36, y: 1.9953284}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,7 +1460,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779642651}
-  - component: {fileID: 779642652}
   m_Layer: 0
   m_Name: BunnyPatrol
   m_TagString: Untagged
@@ -1477,22 +1485,6 @@ Transform:
   - {fileID: 806890848}
   m_Father: {fileID: 1175374243}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &779642652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779642650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec30397f8fd2904bb7ccf2400a93c53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftEdge: {fileID: 806890848}
-  rightEdge: {fileID: 781596548}
-  enemy: {fileID: 1467834909}
-  speed: 5
 --- !u!1 &781596547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,9 +1865,11 @@ GameObject:
   - component: {fileID: 1467834913}
   - component: {fileID: 1467834912}
   - component: {fileID: 1467834910}
-  - component: {fileID: 1467834914}
   - component: {fileID: 1467834915}
-  - component: {fileID: 1467834916}
+  - component: {fileID: 1467834914}
+  - component: {fileID: 1467834918}
+  - component: {fileID: 1467834920}
+  - component: {fileID: 1467834919}
   m_Layer: 0
   m_Name: DustBunny
   m_TagString: Untagged
@@ -2010,8 +2004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946232fb3a7a61940b5f6823763e0d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxColliderEnemyDeath: {fileID: 1467834915}
-  boxColliderPlayerDeath: {fileID: 0}
   jumpCooldown: 3
   jumpForce: 6
 --- !u!61 &1467834915
@@ -2059,8 +2051,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9003453, y: 0.5128703}
   m_EdgeRadius: 0
---- !u!60 &1467834916
-PolygonCollider2D:
+--- !u!114 &1467834918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467834908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dda112410eaa43428133d82108386bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoxColiderKill: {fileID: 1467834919}
+  BoxColiderDeath: {fileID: 1467834915}
+--- !u!61 &1467834919
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2091,7 +2097,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.4162929, y: -0.011588693}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2101,28 +2107,25 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.8823534, y: 0.15609461}
-      - {x: 1.9188865, y: 1.3182783}
-      - {x: 1.0827787, y: 1.6523176}
-      - {x: 0.5612429, y: 1.7846693}
-      - {x: 0.09188871, y: 1.8413903}
-      - {x: -0.8013317, y: 1.6407614}
-      - {x: -1.1543887, y: 1.7846689}
-      - {x: -1.4904971, y: 1.8035765}
-      - {x: -1.9594434, y: 1.3629302}
-      - {x: -1.6826841, y: 1.143159}
-      - {x: -1.7111088, y: 1.1102979}
-      - {x: -1.843043, y: 0.16194703}
-      - {x: -1.5213411, y: -1.1980095}
-      - {x: -0.66349864, y: -1.4984268}
-      - {x: 0.52813107, y: -1.5929637}
-      - {x: 1.2648908, y: -1.4795196}
-      - {x: 1.5144979, y: -1.0913906}
-      - {x: 1.7429316, y: -0.8151611}
-      - {x: 1.8361079, y: -0.44170517}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 4.464208, y: 3.2180965}
+  m_EdgeRadius: 0
+--- !u!114 &1467834920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467834908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec30397f8fd2904bb7ccf2400a93c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEdge: {fileID: 806890848}
+  rightEdge: {fileID: 781596548}
+  enemy: {fileID: 1467834909}
+  speed: 4
 --- !u!1 &1607198818
 GameObject:
   m_ObjectHideFlags: 3
