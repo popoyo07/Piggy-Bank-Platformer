@@ -6,6 +6,7 @@ public class CatDeath : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
+    private Health CatHealth;
 
     private void Awake()
     {
@@ -16,7 +17,16 @@ public class CatDeath : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Die();
+            CatHealth = transform.GetComponent<Health>();
+            if (CatHealth.currentHealth > 0)
+            {
+                CatHealth.takeDamage(1);
+                anim.SetTrigger("hurt");
+            }
+            else
+            {
+                Die();
+            }
         }
     }
 
