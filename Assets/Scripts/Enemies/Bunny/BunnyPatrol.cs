@@ -17,7 +17,7 @@ public class BunnyPatriol : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         currentPoint = RightEdge.transform;
-        anim.SetBool("Moving");
+      
     }
     private void Update()
     {
