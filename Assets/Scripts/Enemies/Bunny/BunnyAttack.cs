@@ -34,6 +34,7 @@ public class MeleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("Atk");
+                Debug.Log("atacking");
             }
         }
     }
@@ -63,6 +64,7 @@ public class MeleeEnemy : MonoBehaviour
         if (PlayerInSight())
         {
             playerhealth.takeDamage(dmg);
+            Debug.Log("doing dmg" + playerhealth.currentHealth);
         }
 
     }

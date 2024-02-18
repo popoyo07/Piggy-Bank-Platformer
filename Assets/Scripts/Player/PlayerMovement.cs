@@ -44,10 +44,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         updateAnimation();
+        CheckForQuitInput();
+
 
     }
 
-   private void updateAnimation()
+    private void updateAnimation()
     {
         MovementState state;
 
@@ -84,5 +86,23 @@ public class PlayerMovement : MonoBehaviour
             0f, Vector2.down,
             .1f,
             jumpableGround); // reading so can the player can only jump when is touching the ground 
+    }
+
+    void CheckForQuitInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            QuitGame();
+        }
+    }
+
+    // Function to quit the game
+    void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 }

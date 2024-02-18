@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
