@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coli = GetComponent<BoxCollider2D>();
-       // anim = GetComponent<Animator>(); // conects with the animation components so I can use them in variables
-        // sprite = GetComponent<SpriteRenderer>(); 
+        anim = GetComponent<Animator>(); // conects with the animation components so I can use them in variables
+        sprite = GetComponent<SpriteRenderer>(); 
     }
 
     // Update is called once per frame
@@ -38,16 +38,16 @@ public class PlayerMovement : MonoBehaviour
 
 
         //   || Input.GetKeyDown("'W' key")
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        // will add later "updateAnimation();"
+        updateAnimation();
 
     }
 
-   /* private void updateAnimation()
+   private void updateAnimation()
     {
         MovementState state;
 
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.falling;
         }
         anim.SetInteger("State", (int)state);
-    } */
+    } 
 
     private bool IsGrounded()
     {
