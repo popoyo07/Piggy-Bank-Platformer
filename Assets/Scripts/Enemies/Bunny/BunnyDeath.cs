@@ -24,5 +24,11 @@ public class BunnyDeath : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
+        Invoke("DestroyObject", 1f);
+    }
+
+    void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }
