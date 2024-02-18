@@ -22,11 +22,14 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         Debug.Log(currentHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth > 0)
+        {
+            anim.SetTrigger("hurt");
+        }
+        else
         {
             Die();
         }
-     
     }
 
     private void Die()

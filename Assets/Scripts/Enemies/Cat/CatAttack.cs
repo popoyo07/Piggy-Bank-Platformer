@@ -33,7 +33,7 @@ public class CatAttack : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                anim.SetBool("Attk", true);
+                anim.SetTrigger("Attk");
                 Debug.Log("atacking");
             }
         }

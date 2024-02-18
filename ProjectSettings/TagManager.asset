@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Ground
   - 'Directions '
+  - Penny
+  - Nickle
+  - Dime
+  - Quarter
   layers:
   - Default
   - TransparentFX
