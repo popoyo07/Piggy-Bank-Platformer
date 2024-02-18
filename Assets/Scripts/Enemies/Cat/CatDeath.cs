@@ -40,7 +40,7 @@ public class CatDeath : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
         SpawnObject();
-        Invoke("DestroyObject", 1f);
+        Invoke("DestroyObject", 0.7f);
       
     }
 
