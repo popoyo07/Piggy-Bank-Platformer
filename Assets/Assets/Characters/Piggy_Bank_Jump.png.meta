@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fec9cb81134f23c438c262f1b77edd0c
+guid: 14fc74835b0fef741a7a194681f0f461
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Piggy_Bank_Walk_0
+      name: Piggy_Bank_Jump_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 64
-        height: 64
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e037dbfc28fefd54db7de68479322248
-      internalID: 1585931602
+      spriteID: fc8f05527d2fb484195d3fcf96c57c9a
+      internalID: 878993848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Piggy_Bank_Walk_1
+      name: Piggy_Bank_Jump_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ae48e5915df31a4ca88851f2645da26
-      internalID: -1233919297
+      spriteID: 47f6b678fb6045b4ebe1f51a11bf3da2
+      internalID: 756636604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Piggy_Bank_Walk_2
+      name: Piggy_Bank_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87fb998e534ae840994821f3a2a579d
+      internalID: -445127711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Piggy_Bank_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383dfcc9e8b2b1342864904c48c7eaaa
+      internalID: -218964049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Piggy_Bank_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad89900f4501be24580569cb9d319f02
+      internalID: -1476840234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Piggy_Bank_Jump_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5607e3a61a0ac64da2b77141306b4e6
+      internalID: -1648872819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Piggy_Bank_Jump_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3530e3b0b91754944963da7f77ced67a
-      internalID: 373908735
+      spriteID: 116b05f68ab610d478cf48a664573dd6
+      internalID: 28916152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Piggy_Bank_Walk_3
+      name: Piggy_Bank_Jump_7
       rect:
         serializedVersion: 2
-        x: 64
+        x: 512
         y: 0
-        width: 64
-        height: 64
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85d584ab0652a5a49a2ff37ab3c51af4
-      internalID: 640185318
+      spriteID: e9c2d3e033966b8448bb8a001ad6b58b
+      internalID: -1684850672
       vertices: []
       indices: 
       edges: []
@@ -217,10 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Piggy_Bank_Walk_0: 1585931602
-      Piggy_Bank_Walk_1: -1233919297
-      Piggy_Bank_Walk_2: 373908735
-      Piggy_Bank_Walk_3: 640185318
+      Piggy_Bank_Jump_0: 878993848
+      Piggy_Bank_Jump_1: 756636604
+      Piggy_Bank_Jump_2: -445127711
+      Piggy_Bank_Jump_3: -218964049
+      Piggy_Bank_Jump_4: -1476840234
+      Piggy_Bank_Jump_5: -1648872819
+      Piggy_Bank_Jump_6: 28916152
+      Piggy_Bank_Jump_7: -1684850672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
