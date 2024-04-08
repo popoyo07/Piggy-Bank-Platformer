@@ -1,36 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CatDeath : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
-    private EnemiesHealth CatHealth;
+    private EnemiesHealth catHealth;
     [SerializeField] private GameObject Prefav;
     private GameObject current;
+
+    // Custom event declaration
+    public UnityEvent OnPlayerCollision;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        catHealth = GetComponent<EnemiesHealth>();
     }
 
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BounceKill"))
+        {
+            Debug.Log("Collision detected with: " + collision.gameObject.name);
+            // Invoke the custom event
+            OnPlayerCollision.Invoke();
+            catHealth.takeDamage(1);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            CatHealth = transform.GetComponent<EnemiesHealth>();
-            if (CatHealth.currentHealth > 0)
+            Health h = collision.gameObject.GetComponent<Health>();
+            if (h != null)
             {
-                CatHealth.takeDamage(1);
-                anim.SetTrigger("hurt");
-            }
-            else
-            {
-                Die();
+                // Execute the Die method of the Health component
+                h.Diee(); // Assuming you have a Die() method in the Health script
             }
         }
     }

@@ -38,6 +38,8 @@ public class CatAttack : MonoBehaviour
                 cooldownTimer = 0;
                 anim.SetTrigger("Attk");
                 Debug.Log("atacking");
+
+
             }
         }
         if(catPatrol != null)

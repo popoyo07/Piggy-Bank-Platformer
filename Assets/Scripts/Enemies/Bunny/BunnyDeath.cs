@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BunnyDeath : MonoBehaviour
 {
@@ -8,17 +10,38 @@ public class BunnyDeath : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private GameObject Prefav;
     private GameObject current;
+ 
+
+    // Custom event declaration
+    public UnityEvent OnPlayerCollision;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BounceKill"))
+        {
+            Debug.Log("Collision detected with: " + collision.gameObject.name);
+            // Invoke the custom event
+            OnPlayerCollision.Invoke();
+            Die();
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Die();
+            Health h = collision.gameObject.GetComponent<Health>();
+            if (h != null)
+            {
+                // Execute the Die method of the Health component
+                h.Diee(); // Assuming you have a Die() method in the Health script
+            }
         }
     }
 

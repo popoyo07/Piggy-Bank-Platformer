@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9137742566017470693}
   - component: {fileID: 4955318766810189688}
   - component: {fileID: 8971325260368923783}
-  - component: {fileID: 3368882368233980293}
   - component: {fileID: 1543729621583209256}
   - component: {fileID: 1353631396191980621}
   m_Layer: 8
@@ -170,29 +169,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000009416216, y: 0.16749313}
+  m_Offset: {x: 0.07107517, y: 0.32604244}
   serializedVersion: 2
-  m_Radius: 1.8272781
---- !u!114 &3368882368233980293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907898643189677943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585810db1074aaf46be47bd67d91f485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 3
-  range: 2.5
-  colliderDistance: 0
-  dmg: 10
-  boxCollider: {fileID: 8971325260368923783}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  m_Radius: 2.0897048
 --- !u!114 &1543729621583209256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +185,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefav: {fileID: 5046106866176915008, guid: 3bab9f7daf6ae464cba7100da8d6ef70, type: 3}
+  playerHitbox: {fileID: 0}
+  OnPlayerCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1353631396191980621
 MonoBehaviour:
   m_ObjectHideFlags: 0

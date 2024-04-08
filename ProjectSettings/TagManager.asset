@@ -12,6 +12,7 @@ TagManager:
   - Dime
   - Quarter
   - Goal
+  - BounceKill
   layers:
   - Default
   - TransparentFX
