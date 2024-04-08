@@ -196,6 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefav: {fileID: 2657288402628325533, guid: 08a65898edc029b45bf23a444ae357e8, type: 3}
+  OnPlayerCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7239260129459801317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94aa0a505bab21040ab90fc093e8c8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
 --- !u!114 &707587105847854211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,9 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 3
-  range: -0.76
-  colliderDistance: -46.91
-  dmg: 5
+  range: 107.1
+  colliderDistance: -75.9
   boxCollider: {fileID: 7093524138422060124}
   playerLayer:
     serializedVersion: 2

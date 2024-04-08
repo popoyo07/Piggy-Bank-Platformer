@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemiesHealth : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
+    private float startingHealth = 3f;
     public float currentHealth { get; private set; } // making it accesible but value can only change in this method
     private Animator anim;
     private Rigidbody2D rb;

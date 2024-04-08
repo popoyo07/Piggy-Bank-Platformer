@@ -9,7 +9,7 @@ public class CatAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
-    [SerializeField] private int dmg;
+    private int dmg = 3;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
@@ -23,6 +23,21 @@ public class CatAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         catPatrol = GetComponentInParent<Patrol>();
+
+        AdjustAttackColliderSize();
+    }
+
+    private void AdjustAttackColliderSize()
+    {
+        // Create a new collider with the desired size
+        BoxCollider2D newCollider = gameObject.AddComponent<BoxCollider2D>();
+        newCollider.size = new Vector2(boxCollider.size.x, boxCollider.size.y * 0.5f);
+
+        // Disable the original collider
+        boxCollider.enabled = false;
+
+        // Assign the new collider as the attack box collider
+        boxCollider = newCollider;
     }
 
     private void Update()
@@ -38,7 +53,7 @@ public class CatAttack : MonoBehaviour
                 cooldownTimer = 0;
                 anim.SetTrigger("Attk");
                 Debug.Log("atacking");
-
+                DamagePlayer();
 
             }
         }

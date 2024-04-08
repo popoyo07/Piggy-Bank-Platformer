@@ -22,6 +22,10 @@ public class LooseOptinos : MonoBehaviour
         SceneManager.LoadSceneAsync("Main Menu"); // Replace "Scene1" with the actual name of your first scene
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadSceneAsync("Main Menu"); // Replace "Scene1" with the actual name of your first scene
+    }
 
     void QuitGame()
     {

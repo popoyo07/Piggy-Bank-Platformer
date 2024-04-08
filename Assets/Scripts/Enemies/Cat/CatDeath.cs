@@ -25,10 +25,11 @@ public class CatDeath : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BounceKill"))
         {
-            Debug.Log("Collision detected with: " + collision.gameObject.name);
+            Debug.Log("Collision detected with: character bounce. Current Health " + catHealth.currentHealth);
             // Invoke the custom event
             OnPlayerCollision.Invoke();
             catHealth.takeDamage(1);
+            Debug.Log("Remaining health "+ catHealth.currentHealth);
         }
     }
 
