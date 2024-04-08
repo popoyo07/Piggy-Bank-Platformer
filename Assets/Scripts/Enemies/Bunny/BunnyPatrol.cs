@@ -34,6 +34,16 @@ public class BunnyPatrol : MonoBehaviour
     }
     private void Update()
     {
+
+        Transform childTransform = transform.Find("DustBunny");
+
+        if (childTransform == null)
+        {
+            // Child object not found
+            Destroy(gameObject);
+            Debug.Log("object not found");
+       
+        }
         if (movingLeft)
         {
             if (enemy.position.x > leftEdge.position.x)
@@ -77,4 +87,6 @@ public class BunnyPatrol : MonoBehaviour
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
             enemy.position.y, enemy.position.z);
     }
+
+
 }

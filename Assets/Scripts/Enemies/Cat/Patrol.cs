@@ -34,6 +34,15 @@ public class Patrol : MonoBehaviour
     }
     private void Update()
     {
+        Transform childTransform = transform.Find("CatBoss");
+
+        if (childTransform == null)
+        {
+            // Child object not found
+            Destroy(gameObject);
+            Debug.Log("object not found");
+
+        }
         if (movingLeft)
         {
             if (enemy.position.x > leftEdge.position.x)

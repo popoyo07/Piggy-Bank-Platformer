@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
+
     public float currentHealth { get; private set; } // making it accesible but value can only change in this method
     private Animator anim;
     private Rigidbody2D rb;
@@ -29,11 +30,13 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Die();
+            Diee();
         }
     }
 
-    private void Die()
+
+
+    internal void Diee()
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");

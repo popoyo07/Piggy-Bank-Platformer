@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5777253209453778676}
   - component: {fileID: 8431418576848263405}
+  - component: {fileID: 58532228889086257}
   m_Layer: 0
   m_Name: CatPatrolFinal
   m_TagString: Untagged
@@ -53,6 +54,19 @@ MonoBehaviour:
   speed: 3
   idlDuration: 1
   anim: {fileID: 5481130099205660990}
+--- !u!114 &58532228889086257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652751743369550274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fb6e047b5b2b944873750a68b0f329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkInterval: 1
 --- !u!1 &7402695439174059318
 GameObject:
   m_ObjectHideFlags: 0
