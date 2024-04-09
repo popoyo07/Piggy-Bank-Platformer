@@ -34,11 +34,11 @@ public class ItemCollector : MonoBehaviour
             money += 0.25f;
         }
 
-        if (money >= 5f)
+        /*if (money >= 5f)
         {
             Invoke("LoadScene", 1f);
             ; // Replace "Scene1" with the actual name of your first scene
-        }
+        }*/
 
         // Format the money with two decimal places and update the UI text
         ScoreText.text = " $ " + money.ToString("F2");
@@ -47,9 +47,24 @@ public class ItemCollector : MonoBehaviour
         Debug.Log("Money: " + money.ToString("F2"));
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Goal"))
+        {
+            GetMoney();
+            Invoke("LoadScene", 0.5f);
+            PlayerPrefs.SetFloat("PlayerMoney", money);
+        }
+    }
+
     private void LoadScene()
     {
         SceneManager.LoadSceneAsync("YouWin"); // Replace "Scene1" with the actual name of your first scene
+    }
+
+    public float GetMoney()
+    {
+        return money;
     }
 }
 
